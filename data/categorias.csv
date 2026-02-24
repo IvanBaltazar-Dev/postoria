@@ -1,0 +1,11 @@
+nombre,descripcion
+Backend,Desarrollo del lado del servidor encargado de la logica de negocio autenticacion procesamiento de datos integracion con bases de datos y exposicion de servicios mediante APIs seguras y escalables
+Frontend,Construccion de interfaces de usuario interactivas y responsivas enfocadas en experiencia de usuario accesibilidad y comunicacion eficiente con servicios backend
+DevOps,Practica que integra desarrollo y operaciones mediante automatizacion de pipelines infraestructura como codigo monitoreo y despliegue continuo para acelerar entregas confiables
+Cloud Computing,Provision y gestion de infraestructura almacenamiento y servicios de computo bajo demanda en entornos distribuidos como AWS Azure o GCP optimizando escalabilidad y costos
+Database Management,
+Network Security,Proteccion de redes mediante segmentacion firewalls sistemas de deteccion y prevencion de intrusos cifrado y control de accesos para mitigar amenazas
+Machine Learning,Desarrollo e implementacion de modelos predictivos basados en algoritmos estadisticos y aprendizaje automatico con validacion entrenamiento y despliegue en produccion
+Data Analysis,Exploracion limpieza y visualizacion de datos para identificar patrones generar metricas y apoyar la toma de decisiones estrategicas
+Cybersecurity,Proteccion integral de sistemas aplicaciones y datos mediante gestion de vulnerabilidades monitoreo de amenazas respuesta a incidentes y controles de seguridad
+IoT Development,Desarrollo de soluciones que integran dispositivos fisicos conectados a internet para recopilar procesar y transmitir datos en tiempo real
