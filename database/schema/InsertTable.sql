@@ -50,3 +50,41 @@ CREATE TABLE comentarios (
   FOREIGN KEY (articulo_id) REFERENCES articulos(articulo_id)
 );
 
+--CREACION DE TABLA REACCIONES_ARTICULO
+CREATE TABLE reacciones_articulo (
+  usuario_id INTEGER NOT NULL,
+  articulo_id INTEGER NOT NULL,
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (usuario_id, articulo_id),
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
+  FOREIGN KEY (articulo_id) REFERENCES articulos(articulo_id)
+);
+
+-- CREACION DE TABLA SEGUIDORES
+CREATE TABLE seguidores (
+  seguidor_id INTEGER NOT NULL,
+  seguido_id INTEGER NOT NULL,
+  fecha_seguimiento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (seguidor_id, seguido_id),
+  FOREIGN KEY (seguidor_id) REFERENCES usuarios(usuario_id),
+  FOREIGN KEY (seguido_id) REFERENCES usuarios(usuario_id),
+  CONSTRAINT chk_no_autoseguimiento CHECK (seguidor_id <> seguido_id)
+);
+
+--MODIFICACION DE TABLAS
+--Convertir a TIMESTAMP
+ALTER TABLE articulos
+ALTER COLUMN fecha_publicacion TYPE TIMESTAMP
+USING fecha_publicacion::timestamp;
+
+-- Agregar valor por defecto a fecha_publicacion
+ALTER TABLE articulos
+ALTER COLUMN fecha_publicacion SET DEFAULT CURRENT_TIMESTAMP;
+
+-- Agregar timestamp a comentarios (con valor por defecto)
+ALTER TABLE comentarios
+ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+-- Agregar estado a tabla seguidores (boolean siendo TRUE sigue, FALSE dejo de seguir)
+ALTER TABLE seguidores
+ADD COLUMN estado BOOLEAN NOT NULL DEFAULT TRUE;
